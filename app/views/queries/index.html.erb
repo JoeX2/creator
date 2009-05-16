@@ -1,0 +1,22 @@
+<h1>Listing queries</h1>
+
+<table>
+  <tr>
+    <th>Request</th>
+    <th>Profile</th>
+  </tr>
+
+<% for query in @queries %>
+  <tr>
+    <td><%=h query.request %></td>
+    <td><%=h query.profile %></td>
+    <td><%= link_to 'Show', query %></td>
+    <td><%= link_to 'Edit', edit_query_path(query) %></td>
+    <td><%= link_to 'Destroy', query, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New query', new_query_path %>

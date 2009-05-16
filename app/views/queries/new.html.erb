@@ -1,0 +1,5 @@
+set authenticity_token=<%= form_authenticity_token %><%= "\r\n" -%>
+curl -b "%workdir%\cookies.txt" -sS "http://192.168.1.3:3000/queries" -d "authenticity_token=%authenticity_token%&prayer=%1&name=%2&profile=%3" <%= ">" %> "%workdir%\go.bat" <%= "\r\n" -%>
+<%= "\r\n" -%>
+call go.bat <%= "\r\n" -%>
+rem del go.bat <%= "\r\n" -%>

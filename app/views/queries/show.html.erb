@@ -1,0 +1,13 @@
+<p>
+  <b>Request:</b>
+  <%=h @query.request %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%=h @query.profile %>
+</p>
+
+
+<%= link_to 'Edit', edit_query_path(@query) %> |
+<%= link_to 'Back', queries_path %>

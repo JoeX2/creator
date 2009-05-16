@@ -1,0 +1,13 @@
+<p>
+  <b>Action:</b>
+  <%=h @request.action %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @request.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

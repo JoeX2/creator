@@ -1,0 +1,20 @@
+<h1>Editing query</h1>
+
+<% form_for(@query) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :request %><br />
+    <%= f.text_field :request %>
+  </p>
+  <p>
+    <%= f.label :profile %><br />
+    <%= f.text_field :profile %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @query %> |
+<%= link_to 'Back', queries_path %>
