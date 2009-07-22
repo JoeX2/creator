@@ -1,4 +1,6 @@
 class QueriesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   # GET /queries
   # GET /queries.xml
   def index
@@ -59,7 +61,8 @@ class QueriesController < ApplicationController
         res = "rem #{ @profile.inspect }, #{ @request.inspect } \r\necho will #{ @query.request.action } #{ @query.request.name }\r\n "
         render :text => res
       else
-        render :text => "curl -b \"%workdir%\\cookies.txt\" -sS \"http://192.168.1.3:3000/queries\" -d \"authenticity_token=%authenticity_token%&prayer=#{params[:prayer]}&name=#{params[:name]}&profile=%USERNAME%\" > \"%workdir%\\session.cmd\" \r\n call %workdir%\\session.cmd \r\n  del %workdir%\\session.cmd \r\n"
+        @prayer = params[ :prayer ]
+        @name   = params[ :name   ]
       end
     else
 #      @query = Query.new(params[:query])
