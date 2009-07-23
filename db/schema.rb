@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20090723002641) do
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "request"
+    t.integer  "request_id"
   end
 
 end

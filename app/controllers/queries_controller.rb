@@ -59,6 +59,9 @@ class QueriesController < ApplicationController
         @query.save
         
         res = "rem #{ @profile.inspect }, #{ @request.inspect } \r\necho will #{ @query.request.action } #{ @query.request.name }\r\n "
+        res << "\r\n"
+        res << @request.response.content
+        
         render :text => res
       else
         @prayer = params[ :prayer ]
