@@ -1,0 +1,2 @@
+sudo gen install railroad
+sudo port install graphviz

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090319204020) do
+ActiveRecord::Schema.define(:version => 20090723002641) do
 
   create_table "profiles", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(:version => 20090319204020) do
   create_table "profiles_requests", :id => false, :force => true do |t|
     t.integer "profile_id"
     t.integer "request_id"
+  end
+
+  create_table "profiles_responses", :id => false, :force => true do |t|
+    t.integer "profile_id"
+    t.integer "response_id"
   end
 
   create_table "queries", :force => true do |t|
@@ -40,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20090319204020) do
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "request"
   end
 
 end
